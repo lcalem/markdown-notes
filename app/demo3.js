@@ -1,8 +1,13 @@
 var md = require('markdown-it')()
             .use(require('markdown-it-mathjax')());
 
-document.addEventListener(“DOMContentLoaded”, function(){
-  var result = md.render('$1 *2* 3$');
-
-  document.getElementById("root").innerHTML = result
-});
+module.exports = {
+  mathjax_demo: function () {
+    var result = md.render('$1 *2* 3$');
+    return result;
+  },
+  markdown_demo: function () {
+    var result = md.render('# markdown-it rulezz!');
+    return result;
+  }
+};

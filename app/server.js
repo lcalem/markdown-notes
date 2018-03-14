@@ -1,9 +1,16 @@
 var express = require("express");
 var app = express();
 
-/* serves main page */
+app.set('view engine', 'ejs');
+
+var demo = require('./demo3');
+
+// main page
 app.get("/", function(req, res) {
-  res.sendFile('/index.html')
+  result = demo.markdown_demo();
+  res.render('index', {
+        demo_content: result
+    });
 });
 
 var port = process.env.PORT || 3000;

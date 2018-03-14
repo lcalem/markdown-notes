@@ -9,4 +9,6 @@ up_server: down_server
 down_server:
 	docker-compose -f docker/docker-compose.yml down
 
+reload_server: down_server docker up_server
+
 .PHONY: docker
