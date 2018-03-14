@@ -1,0 +1,7 @@
+app/node_modules/*
+app/demo1.js
+app/demo2.js
+
+notes/*
+!notes/test/
+

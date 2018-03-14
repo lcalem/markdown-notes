@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+
+  server:
+    image: dummyserver:latest
+    ports:
+      - 3000:3000
