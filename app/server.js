@@ -28,12 +28,31 @@ app.get("/", function(req, res) {
 
 });
 
+app.get("/notes/:filename", function(req, res) {
+  var path = '/notes/' + req.params.filename.replace("-", "/") + '.md';
+  var file = fs.readFileSync(path, 'utf8');
+  rendered_md = md.render(file.toString());
+  res.render('index', {
+      demo_content: rendered_md
+  });
+
+});
+
 app.get("/demo", function(req, res) {
   result = demo.markdown_demo();
   res.render('index', {
       demo_content: result
   });
 });
+
+app.get("/math", function(req, res) {
+  var path = '/notes/tools/latex.md';
+  var file = fs.readFileSync(path, 'utf8');
+  rendered_md = md.render(file.toString());
+  res.render('index', {
+      demo_content: rendered_md
+  });
+})
 
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
