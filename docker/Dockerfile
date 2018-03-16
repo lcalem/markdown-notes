@@ -11,7 +11,5 @@ ADD app/demo3.js .
 ADD app/package.json .
 RUN yarn install
 
-ADD notes notes
-
 EXPOSE 3000
 CMD yarn start

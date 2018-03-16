@@ -3,5 +3,7 @@ services:
 
   server:
     image: dummyserver:latest
+    volumes:
+      - ../notes:/notes
     ports:
       - 3000:3000
