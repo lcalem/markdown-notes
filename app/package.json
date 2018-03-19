@@ -6,6 +6,7 @@
     "ejs": "^2.5.5",
     "express": "^4.16.3",
     "markdown-it": "^8.4.1",
+    "markdown-it-imsize": "^2.0.1",
     "markdown-it-mathjax": "^2.0.0"
   },
   "scripts": {

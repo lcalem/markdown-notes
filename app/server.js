@@ -6,14 +6,14 @@ const md = require('markdown-it')({
   linkify:      true,
   typographer:  false,
   quotes: '“”‘’'
-}).use(require('markdown-it-mathjax')());
+}).use(require('markdown-it-mathjax')()).use(require('markdown-it-imsize'));
 
 var app = express();
 
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
-app.use(express.static('../notes/test'));
+app.use(express.static(__dirname + '/notes/rl/images/'));
 
 var demo = require('./demo3');
 
@@ -43,7 +43,7 @@ app.get("/", function(req, res) {
 
   var links = [];
   file_paths.forEach(function(path) {
-    var url = path.replace('/notes/', '').replace('/', '-').replace('.md', '');
+    var url = path.replace('/notes/', '').split('/').join('-').replace('.md', '');
     var name = '';
 
     // this is probably seriously unoptimized
@@ -67,7 +67,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/notes/:filename", function(req, res) {
-  var path = '/notes/' + req.params.filename.replace("-", "/") + '.md';
+  var path = '/notes/' + req.params.filename.split('-').join('/') + '.md';
   var file = fs.readFileSync(path, 'utf8');
   rendered_md = md.render(file.toString());
   res.render('index', {
