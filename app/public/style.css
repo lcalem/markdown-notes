@@ -3,3 +3,7 @@ body    {
   width: 800px;
   margin: auto;
 }
+
+a {
+  cursor: pointer;
+}

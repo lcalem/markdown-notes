@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+ </head>
+ <body>
+   <noscript>
+     You need to enable JavaScript to run this app.
+   </noscript>
+   <h2>Notes!</h2>
+   <div id="root">
+      <% for(var i=0; i<files.length; i++) {%>
+        <a href='/notes/<%= files[i].url %>'><%= files[i].name %> </a><br/>
+      <%}%>
+    </div>
+ </body>
+</html>
