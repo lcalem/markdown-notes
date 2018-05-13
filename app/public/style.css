@@ -7,3 +7,89 @@ body    {
 a {
   cursor: pointer;
 }
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+img {
+    margin-left: 200px;
+}
+
+table {
+    width: 500px;
+    margin: auto;
+}
+
+.table-wrap {
+  margin: 20px 0px 20px 0px;
+}
+
+thead tr td {
+  font-weight: bold;
+}
+
+td {
+  padding: 5px;
+}
+
+.highlight {
+  background-color: #F2F2F2;
+  border: 1px solid #404040;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.green {
+    color: #1AA260;
+}
+
+.red {
+    color: #DD4D40;
+}
+
+.blue {
+    color: #4B8BF5;
+}
+
+.right-img {
+    float: right;
+}
+
+.implem {
+    width: 500px;
+    margin-left: 200px;
+    background-color: #F2F2F2;
+    border: 1px solid #404040;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+.indent-1 {
+    margin-left: 25px;
+}
+
+.indent-2 {
+    margin-left: 50px;
+}
+
+.indent-3 {
+    margin-left: 75px;
+}

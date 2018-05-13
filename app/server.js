@@ -6,14 +6,19 @@ const md = require('markdown-it')({
   linkify:      true,
   typographer:  false,
   quotes: '“”‘’'
-}).use(require('markdown-it-mathjax')()).use(require('markdown-it-imsize'));
+});
+
+md.use(require('markdown-it-mathjax')());
+md.use(require('markdown-it-imsize'));
+md.use(require("markdown-it-anchor"));
+md.use(require("markdown-it-table-of-contents"), {'includeLevel': [2, 3]});
 
 var app = express();
 
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
-app.use(express.static(__dirname + '/notes/rl/images/'));
+app.use(express.static(__dirname + '/notes/'));
 
 var demo = require('./demo3');
 
