@@ -3,13 +3,21 @@
 
 ---
 
+[[toc]]
+
+---
+
+## 1.1. Random stuff
+
 You can write down your notes here
 Here is a [link](https://markdown-it.github.io/) to a demo of markdown-it
 
 And here is a local cat picture
-![local image](images/cat_picture.jpg)
+![local image](/test/images/cat_picture.jpg)
 
 Additional sentence
+
+## 1.2. Math example
 
 Some math: $1 *2* 3$
 
