@@ -37,6 +37,24 @@ table {
     margin: auto;
 }
 
+#toplevel {
+  margin-bottom: 30px;
+}
+
+.type {
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  border: 1px solid #666;
+  margin: 10px 5px 10px 5px;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  vertical-align: middle;
+  color: #666;
+  background-color: #EEE;
+}
+
 .table-wrap {
   margin: 20px 0px 20px 0px;
 }
