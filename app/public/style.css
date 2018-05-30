@@ -42,17 +42,28 @@ table {
 }
 
 .type {
-  cursor: pointer;
-  height: 40px;
-  width: 100px;
-  border: 1px solid #666;
-  margin: 10px 5px 10px 5px;
   display: inline-block;
-  padding: 5px;
+  cursor: pointer;
+  height: 50px;
+  line-height: 40px;
+  width: 110px;
+  margin: 8px;
+  padding: 5px 5px;
   text-align: center;
-  vertical-align: middle;
-  color: #666;
+  color: #444;
   background-color: #EEE;
+  text-decoration: none;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px;
+  transition: .3s;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.type:hover {
+  box-shadow: 0px 8px 30px -12px rgba(0,0,0,0.75);
 }
 
 .table-wrap {
