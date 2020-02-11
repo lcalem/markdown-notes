@@ -12,7 +12,7 @@ Basic usage for local use:
 
 1 - build the docker with `make docker` <br/>
 2 - up it with `make up_server` <br/>
-3 - open your browser at `localhost:3000 <br/>
+3 - open your browser at `localhost:3000` <br/>
 
 ---
 

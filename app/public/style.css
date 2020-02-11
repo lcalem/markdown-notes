@@ -2,6 +2,7 @@ body    {
   padding-top:50px;
   width: 800px;
   margin: auto;
+  -webkit-print-color-adjust:exact;
 }
 
 a {
@@ -27,13 +28,12 @@ h5 {
 h6 {
   font-size: 12px;
 }
-
+/* 
 img {
     margin-left: 200px;
-}
+} */
 
 table {
-    width: 500px;
     margin: auto;
 }
 
@@ -68,6 +68,7 @@ table {
 
 .table-wrap {
   margin: 20px 0px 20px 0px;
+  width: 500px;
 }
 
 thead tr td {
@@ -97,6 +98,10 @@ td {
     color: #4B8BF5;
 }
 
+.light {
+  color: #BBB;
+}
+
 .right-img {
     float: right;
 }
@@ -121,4 +126,19 @@ td {
 
 .indent-3 {
     margin-left: 75px;
+}
+
+.prob-table {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.prob-table td {
+    width: 70px;
+    height: 40px;
+}
+
+.eq-nb {
+    float:right;
+    margin-right: 200px;
 }

@@ -31,13 +31,15 @@ var walkSync = function(dir, filelist) {
     if (file.startsWith('.')) {
       return;
     }
-    if (fs.statSync(dir + file).isDirectory()) {
+    // check .md first to allow for symlinks
+    if (file.endsWith('.md')) {
+      filelist.push(dir + file);
+    }
+    else if (fs.statSync(dir + file).isDirectory()) {
       toplevel.push(file);
       filelist = walkSync(dir + file + '/', filelist)["filelist"];
     }
-    else if (file.endsWith('.md')) {
-      filelist.push(dir + file);
-    }
+
   });
 
   return {
@@ -77,8 +79,7 @@ app.get("/", function(req, res) {
 
   var links = linksFromPaths(file_paths);
 
-  console.log("blblblblbl");
-  console.log(toplevel);
+  // console.log(toplevel);
 
   // index page rendering with all paths
   res.render('indexfiles', {
@@ -92,10 +93,32 @@ app.get("/", function(req, res) {
 // specific page
 app.get("/notes/:filename", function(req, res) {
   var path = '/notes/' + req.params.filename.split('-').join('/') + '.md';
-  var file = fs.readFileSync(path, 'utf8');
-  rendered_md = md.render(file.toString());
-  res.render('index', {
-      demo_content: rendered_md
+
+  // check for symlink
+  fs.lstat(path, function(err, stats) {
+    if (stats.isSymbolicLink()) {
+      console.log('found symlink');
+      fs.readlink(path, function (err, linkString) {
+         // TODO err
+         console.log(linkString);
+         // console.log(fs.realpath(path));
+         var path = '/notes/' + linkString.split('/notes/')[1];
+         // console.log(path);
+         var file = fs.readFileSync(path, 'utf8');
+         rendered_md = md.render(file.toString());
+         res.render('index', {
+             demo_content: rendered_md
+         });
+      });
+    }
+    else {
+      console.log('non symlink ' + path)
+      var file = fs.readFileSync(path, 'utf8');
+      rendered_md = md.render(file.toString());
+      res.render('index', {
+          demo_content: rendered_md
+      });
+    }
   });
 
 });
